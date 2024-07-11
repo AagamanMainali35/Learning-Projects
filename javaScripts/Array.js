@@ -4,3 +4,8 @@ let fruits=['apple','banana','orange']
 // fruits.sort() sorts them alpahbetically 
 // fruits.reverse() reverses the array in current order
 //console.log(fruits.length) returm the length of the array 
+//console.log(fruits.shift()) //removes first index of the array
+//console.log(fruits.unshift('pinapple'),fruits) //adds the pinapple in first index of the array 
+for(let i=fruits.length-1;i>=0;i--){
+    console.log(fruits[i])
+}

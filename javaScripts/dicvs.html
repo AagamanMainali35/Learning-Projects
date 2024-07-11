@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+        }
+        .three {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            background-color: rgb(251, 0, 255);
+            position: absolute;
+        }
+        .two {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            background-color: rgb(31, 16, 165);
+            position: relative;
+        }
+        button {
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid rgb(255, 255, 255);
+            opacity: 0.7;
+        }
+        button:active {
+            transform: translate(1px, 1px);
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div id='red' class="one">
+        <button id="btn1">Click me for blue</button>
+    </div>
+    <!-- <div class="three">
+        <button id="btn2">Click me</button>
+    </div> -->
+    <div id='blue' class="two">
+        <button id="btn2">Click me for red</button>
+    </div>
+
+    <script>
+        // Get references to elements and store default z-index values
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let red = document.getElementById('red');
+        let blue = document.getElementById('blue');
+
+        let blueDefaultZIndex = blue.style.zIndex;
+        let redDefaultZIndex = red.style.zIndex;
+
+        btn2.onclick = function() {
+            blue.style.zIndex = -1;
+            red.style.zIndex = redDefaultZIndex; 
+        };
+
+        btn1.onclick = function() {
+            red.style.zIndex = -1;
+            blue.style.zIndex = blueDefaultZIndex; 
+        };
+        console.log(blueDefaultZIndex);
+        console.log(redDefaultZIndex);
+    </script>
+</body>
+</html>

@@ -147,18 +147,33 @@
         let currindex = 0;
         let time = Number(document.getElementById("timer").textContent);
         let question = [
-            `The term "app" in the context of mobile devices stands for ?`,
-            `Who is the author of the "Harry Potter" series?`,
-            `In which sport would you perform a slam dunk?`,
-            `How many UEFA Champions League titles has Ronaldo won in his career?`
-        ]
-        let option = [
-            [`Application`, `Apparatus`, `Appendix`, `Apprehension`],
-            [`Socrates`, `joe biden`, `Coolen hoover`, `JK.Rowling`],
-            [`Table Tenis`, `Polo`, `Football`, `Basketball`],
-            [`6`, `3`, `5`, `2`]
-        ];
-        let ans = [0, 3, 3, 2]
+    `What is the capital city of Australia?`,
+    `Who discovered penicillin?`,
+    `Which planet is known as the Red Planet?`,
+    `What is the largest mammal on Earth?`,
+    `Who painted the Mona Lisa?`,
+    `What is the longest river in the world?`,
+    `Who developed the theory of relativity?`,
+    `What is the tallest mountain in the world?`,
+    `Which country is the largest by land area?`,
+    `Who wrote the novel "1984"?`
+];
+
+let option = [
+    [`Sydney`, `Melbourne`, `Canberra`, `Perth`],
+    [`Alexander Fleming`, `Thomas Edison`, `Albert Einstein`, `Marie Curie`],
+    [`Jupiter`, `Mars`, `Saturn`, `Mercury`],
+    [`Blue whale`, `African elephant`, `Giraffe`, `Polar bear`],
+    [`Leonardo da Vinci`, `Pablo Picasso`, `Vincent van Gogh`, `Michelangelo`],
+    [`Amazon`, `Nile`, `Yangtze`, `Mississippi`],
+    [`Isaac Newton`, `Galileo Galilei`, `Albert Einstein`, `Stephen Hawking`],
+    [`Mount Kilimanjaro`, `Mount Everest`, `K2`, `Makalu`],
+    [`Russia`, `Canada`, `China`, `United States`],
+    [`George Orwell`, `Aldous Huxley`, `J.K. Rowling`, `Ernest Hemingway`]
+];
+
+let ans = [2, 0, 1, 0, 0, 1, 2, 1, 1, 0];
+
         let questionDOM = document.getElementById("question");
         let result = document.getElementById("result");
         const countdown = () => {
@@ -187,12 +202,13 @@
                 if (currindex <=ans.length) {
                     if (user == ans[currindex]){
                         currindex++;
+                        result.textContent = ""
                         if (currindex<ans.length){
                             loadques()
                             time=31;
                         }
                         else{
-                        document.querySelector(".container2").style.height = '430px';
+                       
                         document.getElementById("timer").style.display="none"
                         document.getElementById("winMessage").style.display="block";
                         document.getElementById("winMessage").style.transform = "translateX(2px)";                      
@@ -202,10 +218,11 @@
                         }    
                     }
                     else {
-                        document.querySelectorAll(".container2").style.height = '420px';
-                        result.textContent = 'Wrong Answer yopu lost the game !';
+                        document.querySelector(".container2").style.height = '420px';
+                        result.textContent = 'Wrong Answer  ! Try again..';
                         result.style.color = 'rgb(230, 220, 200)';
                         result.style.fontSize = '20px'
+                        
                     }
                 }
                 

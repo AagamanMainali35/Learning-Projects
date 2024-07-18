@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin-top: 230px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #2d2d2d;
+        }
+        p {
+            font-size: 1.2em;
+            color: #9a9797;
+        }
+        #counter {
+            font-size: 2em;
+            color: #FF5733;
+            display: inline;
+        }
+        body {
+            background-image: url(4932799_30840.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <p id="counter">0</p> <br>Page Not Found
+        </h1>
+        <p>Oops! Looks like you've ventured into uncharted territory.</p>
+        <p>But don't worry, our digital explorers are on the case!</p>
+        <p>Meanwhile, enjoy watching the countdown:</p>
+    </div>
+    <script>
+        let count = 0;
+        function timer(){
+            if(count<404){
+                count++
+                document.getElementById('counter').textContent=count;
+            }
+        }
+        setInterval(timer,5)
+    </script>
+</body>
+</html>

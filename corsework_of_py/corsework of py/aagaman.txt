@@ -1,0 +1,13 @@
+
+/t/t/tBill no: 296
+date: 2024-05-29					 Time: 20:58:37
+name:  aagaman
+Address: jorpati
+Contact Number: 9803184146
+Laptop Name: Razer Blade				Company Name: Razer
+Price: $2000					 Quantity: 10
+Total price: 20000
+
+Shipping cost: 250
+Total: 20000
+Grand total: 20250

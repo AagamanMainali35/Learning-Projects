@@ -195,20 +195,17 @@ let ans = [2, 0, 1, 0, 0, 1, 2, 1, 1, 0];
             document.getElementById('option2').textContent = option[currindex][1]
             document.getElementById('option3').textContent = option[currindex][2]
             document.getElementById('option4').textContent = option[currindex][3]
-            
-
         }
         const check = (user) => {
                 if (currindex <=ans.length) {
                     if (user == ans[currindex]){
                         currindex++;
                         result.textContent = ""
-                        if (currindex<ans.length){
+                        if(currindex<ans.length){
                             loadques()
                             time=31;
                         }
                         else{
-                       
                         document.getElementById("timer").style.display="none"
                         document.getElementById("winMessage").style.display="block";
                         document.getElementById("winMessage").style.transform = "translateX(2px)";                      
@@ -222,6 +219,8 @@ let ans = [2, 0, 1, 0, 0, 1, 2, 1, 1, 0];
                         result.textContent = 'Wrong Answer  ! Try again..';
                         result.style.color = 'rgb(230, 220, 200)';
                         result.style.fontSize = '20px'
+                        time=0
+                        document.getElementById("timer").textContent = 0;
                         
                     }
                 }

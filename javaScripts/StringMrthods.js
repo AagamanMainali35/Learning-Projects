@@ -1,0 +1,13 @@
+ let username="Aagaman mainali";
+// let date="2020-10-19";
+// console.log(username.charAt(0));
+// console.log(username.indexOf("g"));
+// console.log(username.lastIndexOf("a"));
+// console.log(username.trim());
+// console.log(username.toUpperCase());
+// console.log(username.toLowerCase());
+// console.log(username.repeat(3));
+// console.log(username.startsWith("A"));
+// console.log(username.includes(" "));
+// console.log(date.replaceAll("-","/"));
+// console.log(username.padEnd(10,"@"));

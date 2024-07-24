@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* F 2C  */
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            z-index: 0;
+
+
+        }
+
+        /* celcius 2 F */
+        .container-2 {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .converter {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .main {
+            position: relative;
+        }
+    </style>
+    <div class="main">
+        <div class="container">
+            <h1>Temperature Conversion</h1>
+            <div class="converter">
+                <div class="box">
+                    <label id="ola">Fahrenheit:</label>
+                    <input type="text" id="fahrenheit" placeholder="Enter celsius">
+                    <button id="cl">Convert to Fahrenheit</button>
+                    <a href="" id="CC">Convert to Celsius ?</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-2">
+            <h1>Temperature Conversion</h1>
+            <div class="converter">
+                <div class="box">
+                    <label id="result">Celsius:</label>
+                    <input type="text" id="celsius" placeholder="Enter Fahrenheit">
+                    <button id="fr">Convert to Celsius</button>
+                    <a id="CF" href="">Convert to fahrenheit ? </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function C2F() {
+            let farn
+            let f2c = document.getElementById("cl");
+            let final = document.getElementById("ola")
+            f2c.onclick = function () {
+                farn = Number(document.getElementById("fahrenheit").value);
+                let result = (farn * 1.8) + 32;
+                let result1 = Math.round(result * 100) / 100;
+                if (isNaN(farn)) {
+                    final.textContent = `Invalid Number`;
+                    final.style.color = "red";
+                }
+                else if(farn == " "){
+                    final.textContent = `Cant be empty !`;
+                    final.style.color = "Red";
+
+                } else {
+                    final.style.color = "black";
+                    final.textContent = ` Fahrenheit:${result1}°F`
+                }
+            }
+        }
+        function F2C() {
+            let text = document.getElementById("result")
+            let fahrenheit;
+            let button = document.getElementById("fr")
+            let change = document.getElementById("CF")
+            let container = document.querySelector('.container-2');
+            change.onclick = function (fun) {
+                container.style.zIndex = "-1";
+                fun.preventDefault();
+            }
+            button.onclick = function () {
+                fahrenheit = Number(document.getElementById("celsius").value)
+                if (isNaN(fahrenheit)) {
+                    result.textContent = `Invalid Number `;
+                    result.style.color = "red";
+                }
+                else if(fahrenheit == " "){
+                    result.textContent = `Cant be empty !`;
+                    result.style.color = "Red";
+
+                }
+                else {
+                    let output = (fahrenheit - 32) * 5 / 9;
+                    let ot1 = Math.round(output * 100) / 100;
+                    result.textContent = `Celsius: ${ot1}°C`
+                    result.style.color = "black";
+                }
+            }
+        }
+        C2F()
+        F2C()
+    </script>
+</body>
+</html>

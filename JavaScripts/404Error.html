@@ -45,13 +45,12 @@
     </div>
     <script>
         let count = 0;
-        function timer(){
-            if(count<404){
-                count++
-                document.getElementById('counter').textContent=count;
-            }
+        for (let i = 0; i <=404; i++) {
+            setTimeout(() => {
+                document.getElementById('counter').textContent = i;
+            }, i * 3); 
         }
-        setInterval(timer,5)
     </script>
 </body>
+
 </html>

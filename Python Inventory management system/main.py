@@ -3,7 +3,6 @@ import Write
 import Operation
 import datetime
 import random
-
 def main():
     """This function ask user to sell, buy or purches ."""
     read.my_header()

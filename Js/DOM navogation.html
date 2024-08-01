@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            
+            width: 550px;
+            border-radius: 5px;
+            border: 2px solid black;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly visible background for better contrast */
+            margin: 0 auto; /* Center container horizontally */
+        }
+        
+        .container > h1, 
+        .container > p {
+            color: rgb(171, 169, 169);
+            text-align: center;
+            background-color: rgb(66, 67, 67);
+            width: 530px;
+            margin: 5px;
+            font-size: 35px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+
+        <p>Apple</p>
+        <p>Mango</p>
+        <p>Banana</p>
+        <p>Pinapple</p>
+        <p>Guava</p>
+    </div>
+    <script>
+        let elm1 = document.getElementById('container'); 
+        let elm2 = document.getElementsByClassName('container');
+        let elm3 = document.querySelector('.container');
+        let elm4 = document.querySelectorAll('.container'); 
+        
+         let color=()=>{
+            for (let i = 0; i < elm4.length; i++) {
+             elementos=elm4[i].children
+             
+             console.log(elementos)
+             for(j=0;j<elementos.length;j++){
+                elementos[j].style.color='red'; 
+             }
+         }
+        }
+        // for(i=0;i<elm4.length;i++){
+        //     elm4[i].style.color='red'
+        // }
+       let child=()=>{
+        for(i=0;i<elm4.length;i++){ 
+            rl=elm4[i].children
+            console.log(rl)
+             for(j=0;j<rl.length;j++){
+               
+                rl[j].classList.add(rl[j].textContent)
+                rl[j].id=rl[j].textContent
+                }
+        }
+       } 
+       child()
+       
+    </script>
+</body>
+</html>

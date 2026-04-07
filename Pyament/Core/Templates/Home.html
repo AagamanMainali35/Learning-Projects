@@ -1,0 +1,42 @@
+
+<h2>Payment Form</h2>
+<form id="paymentForm" method="POST">
+    {% csrf_token %}
+    <input type="text" name="amount" placeholder="Amount">
+    <input type="text" name="product_delivery_charge" placeholder="Delivery Charge">
+    <input type="text" name="product_service_charge" placeholder="Service Charge">
+    <input type="text" name="tax_amount" placeholder="Tax Amount">
+    <input type="text" name="product_code" placeholder="Product Code">
+    <button type="submit">Proceed to Pay</button>
+</form>
+
+<script>
+document.getElementById("paymentForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const response = await fetch("http://127.0.0.1:8000/home/", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": csrftoken,
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(data)
+    });
+    const esewaData = await response.json();
+    const esewaForm = document.createElement("form");
+    esewaForm.method = "POST";
+    esewaForm.action = "https://rc-epay.esewa.com.np/api/epay/main/v2/form";
+    for (const key in esewaData) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = esewaData[key];
+        esewaForm.appendChild(input);
+    }
+    document.body.appendChild(esewaForm);
+    esewaForm.submit();
+});
+</script>

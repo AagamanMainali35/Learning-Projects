@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment API Integration Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #f4f4f4;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .note {
+      background: #fffae6;
+      border-left: 4px solid #f1c40f;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    .error {
+      background: #ffe6e6;
+      border-left: 4px solid #e74c3c;
+      padding: 10px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Payment API Integration Guide</h1>
+
+  <p>This document explains how to integrate the payment API with your application. The process involves sending transaction details, generating a unique transaction code and signature, preparing a payload, and finally redirecting to the eSewa payment page.</p>
+
+  <h2>1. Sending Transaction Details</h2>
+  <p>Users must provide the following fields:</p>
+  <ul>
+    <li><strong>amount</strong> (mandatory)</li>
+    <li><strong>product_code</strong> (mandatory)</li>
+    <li>delivery_charge</li>
+    <li>service_charge</li>
+    <li>tax_amount</li>
+  </ul>
+
+  <div class="error">
+    <strong>Error Response:</strong>  
+    If <code>amount</code> or <code>product_code</code> are missing, the following error will be returned:
+    <pre>{
+  "code": "ES705",
+  "message": "Invalid transaction amount."
+}</pre>
+  </div>
+
+  <h2>2. Backend Transaction Processing</h2>
+  <p>On the backend:</p>
+  <ul>
+    <li>A <code>transaction_uuid</code> is generated using <code>uuid.uuid4()</code>.</li>
+    <li>A <code>signature</code> is created based on the required fields.</li>
+    <li>A payload is constructed and returned to the user.</li>
+  </ul>
+
+  <h3>Example Payload</h3>
+  <pre>{
+  "total_amount": "100.00",
+  "transaction_uuid": "f22f91a6-afcc-4df7-97ce-4a99b124a399",
+  "product_code": "EPAYTEST",
+  "amount": "100.00",
+  "tax_amount": "0.00",
+  "product_service_charge": "0.00",
+  "product_delivery_charge": "0.00",
+  "success_url": "http://localhost:8000/success/",
+  "failure_url": "http://localhost:8000/fail/",
+  "signed_field_names": "total_amount,transaction_uuid,product_code",
+  "signature": "4Mggg5jAsEXLz2ttU6NRmvJ9knq5g1BNyrfqft/G6OY="
+}</pre>
+
+  <h2>3. Submitting the Payload</h2>
+  <p>The payload data should be submitted as a POST form to the eSewa test endpoint:</p>
+
+  <pre>&lt;form method="POST" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form"&gt;  
+  &lt;input type="text" name="amount" value="100.00"&gt;
+  &lt;input type="text" name="product_code" value="EPAYTEST"&gt;
+  &lt;input type="text" name="transaction_uuid" value="f22f91a6-afcc-4df7-97ce-4a99b124a399"&gt;
+  &lt;input type="text" name="signature" value="4Mggg5jAsEXLz2ttU6NRmvJ9knq5g1BNyrfqft/G6OY="&gt;
+  &lt;input type="text" name="success_url" value="http://localhost:8000/success/"&gt;
+  &lt;input type="text" name="failure_url" value="http://localhost:8000/fail/"&gt;
+  &lt;!-- Add other required fields from the payload --&gt;
+  &lt;button type="submit"&gt;Pay Now&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+  <h2>4. Redirect to Payment Page</h2>
+  <p>Once the form is submitted, the user is automatically redirected to the eSewa payment page where they can complete the transaction.</p>
+
+  <div class="note">
+    <strong>Note:</strong> Make sure you are using the test endpoint (<code>rc-epay</code>) during development. Replace it with the live endpoint when moving to production.
+  </div>
+</body>
+</html>

@@ -1,0 +1,526 @@
+.filter.car {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 515px; 
+    display: flex;
+    flex-direction: column;
+    margin: 20px; 
+}
+
+.filter.car .product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter.car .product-details {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter.car .product-details h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.filter.car .product-details .description {
+    color: #555;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter.car .features {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.filter.car .features h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+.filter.car .features ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter.car .features ul li {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.filter.car .price-cta {
+    margin-top: auto;
+    text-align: center;
+}
+
+.filter.car .price-cta .price {
+    font-size: 20px;
+    color: #e74c3c;
+    margin: 0;
+    font-weight: bold;
+}
+
+.filter.car .price-cta .availability {
+    font-size: 10px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.filter.car .buy-now {
+    display: inline-block;
+    width: 80%; /* Make the button less wide */
+    max-width: 250px; /* Limit maximum width for larger screens */
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.filter.car .buy-now:hover {
+    background-color: #c0392b;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+button {
+    color: rgb(0, 0, 0);
+    height: 40px;
+    width: 80px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:active {
+    transform: scale(0.98);
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    align-content: space-between;
+}
+.filter {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 515px;
+    width: 300px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    flex: 0 1 auto;
+    /* Allows items to grow and shrink */
+}
+#car:hover {
+    background-color: #ff5722;
+}
+#bike:hover {
+    background-color: #4caf50;
+}
+#bus:hover {
+    background-color: #03a9f4;
+}
+
+#Scooter:hover {
+    background-color: #9c27b0;
+}
+
+#back:hover {
+    background-color: #34375b;
+}
+
+#back {
+    border: 2px solid #34375b;
+}
+
+#car {
+    border: 2px solid #ff5722;
+}
+
+#bike {
+    border: 2px solid #4caf50;
+}
+
+#bus {
+    border: 2px solid #03a9f4;
+}
+
+#Scooter {
+    border: 2px solid #9c27b0;
+}
+
+.filter.car {
+    border: 2px solid #ff5722;
+}
+
+.filter.bus {
+    border: 2px solid #03a9f4;
+}
+
+.filter.bike {
+    border: 2px solid #4caf50;
+}
+
+.filter.Scooter {
+    border: 2px solid #9c27b0;
+}
+.filter.bus {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 515px; 
+    display: flex;
+    flex-direction: column;
+    margin: 20px; 
+}
+
+.filter.bus .product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter.bus .product-details {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter.bus .product-details h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.filter.bus .product-details .description {
+    color: #555;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter.bus .features {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.filter.bus .features h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+.filter.bus .features ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter.bus .features ul li {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.filter.bus .price-cta {
+    margin-top: auto;
+    text-align: center;
+}
+
+.filter.bus .price-cta .price {
+    font-size: 20px;
+    color: #03a9f4; 
+    margin: 0;
+    font-weight: bold;
+}
+
+.filter.bus .price-cta .availability {
+    font-size: 10px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.filter.bus .buy-now {
+    display: inline-block;
+    width: 80%; 
+    max-width: 250px; 
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #03a9f4; 
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, border 0.3s;
+    border: 2px solid #03a9f4;
+}
+
+.filter.bus .buy-now:hover {
+    background-color: #0288d1; 
+    border-color: #0288d1; 
+}
+
+.filter.bike {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 515px; 
+    display: flex;
+    flex-direction: column;
+    margin: 20px; 
+}
+
+.filter.bike .product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter.bike .product-details {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter.bike .product-details h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.filter.bike .product-details .description {
+    color: #555;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter.bike .features {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.filter.bike .features h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+.filter.bike .features ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter.bike .features ul li {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.filter.bike .price-cta {
+    margin-top: auto;
+    text-align: center;
+}
+
+.filter.bike .price-cta .price {
+    font-size: 20px;
+    color:#4caf50; /* Color of the price */
+    margin: 0;
+    font-weight: bold;
+}
+
+.filter.bike .price-cta .availability {
+    font-size: 10px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.filter.bike .buy-now {
+    display: inline-block;
+    width: 80%; 
+    max-width: 250px; 
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color:#4caf50; 
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, border 0.3s;
+    border: 2px solid#4caf50;
+}
+
+.filter.bike .buy-now:hover {
+    background-color:#4caf50;
+    border-color:#4caf50; 
+}
+
+
+.filter.Scooter {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 515px; 
+    display: flex;
+    flex-direction: column;
+    margin: 20px; 
+}
+
+.filter.Scooter .product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter.Scooter .product-details {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter.Scooter .product-details h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.filter.Scooter .product-details .description {
+    color: #555;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter.Scooter .features {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.filter.Scooter .features h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+.filter.Scooter .features ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter.Scooter .features ul li {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.filter.Scooter .price-cta {
+    margin-top: auto;
+    text-align: center;
+}
+
+.filter.Scooter .price-cta .price {
+    font-size: 20px;
+    color: #9c27b0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.filter.Scooter .price-cta .availability {
+    font-size: 10px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.filter.Scooter .buy-now {
+    display: inline-block;
+    width: 80%; 
+    max-width: 250px; 
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #9c27b0; 
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, border 0.3s;
+    border: 2px solid #9c27b0; 
+}
+
+.filter.Scooter .buy-now:hover {
+    background-color: #8e24aa; 
+    border-color: #8e24aa; 
+}

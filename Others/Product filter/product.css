@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+button {
+    color: rgb(0, 0, 0);
+    height: 40px;
+    width: 80px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:active {
+    transform: scale(0.98);
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    align-content: space-between;
+}
+.filter {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 200px;
+    width: 160px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    flex: 0 1 auto;
+    /* Allows items to grow and shrink */
+}
+#car:hover {
+    background-color: #ff5722;
+}
+#bike:hover {
+    background-color: #4caf50;
+}
+#bus:hover {
+    background-color: #03a9f4;
+}
+
+#Scooter:hover {
+    background-color: #9c27b0;
+}
+
+#back:hover {
+    background-color: #34375b;
+}
+
+#back {
+    border: 2px solid #34375b;
+}
+
+#car {
+    border: 2px solid #ff5722;
+}
+
+#bike {
+    border: 2px solid #4caf50;
+}
+
+#bus {
+    border: 2px solid #03a9f4;
+}
+
+#Scooter {
+    border: 2px solid #9c27b0;
+}
+
+.filter.car {
+    border: 2px solid #ff5722;
+}
+
+.filter.bus {
+    border: 2px solid #03a9f4;
+}
+
+.filter.bike {
+    border: 2px solid #4caf50;
+}
+
+.filter.Scooter {
+    border: 2px solid #9c27b0;
+}

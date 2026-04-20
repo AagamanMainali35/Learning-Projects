@@ -1,0 +1,87 @@
+# Django REST Framework - ModelViewSet Overview
+
+## 1. Built-in ACTION METHODS (automatic endpoints)
+
+These correspond to HTTP endpoints:
+
+- `list()` → GET /tasks/
+- `retrieve()` → GET /tasks/1/
+- `create()` → POST /tasks/
+- `update()` → PUT /tasks/1/
+- `partial_update()` → PATCH /tasks/1/
+- `destroy()` → DELETE /tasks/1/
+
+👉 You can override any of these methods.
+
+---
+
+## 2. HOOK METHODS (for customization)
+
+Used to modify logic without rewriting full action methods:
+
+- `perform_create(self, serializer)`
+- `perform_update(self, serializer)`
+- `perform_destroy(self, instance)`
+
+👉 Recommended way to inject business logic.
+
+---
+
+## 3. QUERY / OBJECT METHODS
+
+Control what data is fetched:
+
+- `get_queryset()`
+- `get_object()`
+- `filter_queryset(queryset)`
+
+---
+
+## 4. SERIALIZER METHODS
+
+Control how serializers are used:
+
+- `get_serializer()`
+- `get_serializer_class()`
+- `get_serializer_context()`
+
+---
+
+## 5. PERMISSION / AUTH METHODS
+
+Dynamic control over access:
+
+- `get_permissions()`
+- `get_authenticators()`
+- `get_throttles()`
+
+---
+
+## 6. PAGINATION METHODS
+
+Used internally for pagination:
+
+- `paginate_queryset(queryset)`
+- `get_paginated_response(data)`
+
+---
+
+## 7. CONFIGURABLE ATTRIBUTES (class-level)
+
+These are commonly defined in your ViewSet:
+
+- `queryset`
+- `serializer_class`
+- `pagination_class`
+- `permission_classes`
+- `authentication_classes`
+- `filter_backends`
+- `throttle_classes`
+- `parser_classes`
+- `renderer_classes`
+- `lookup_field`
+- `lookup_url_kwarg`
+
+---
+
+## 🧠 Mental Model
